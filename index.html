@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>arduino uno q leds — Storyboard Preview + Export</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Arduino Uno Q leds editor</h1>
+  <p class="lead">Row-major output. Save, copy, paste frames in storyboard, view previews, play animations, or export as 4×32-bit hex.</p>
+
+  <div class="wrap">
+    <div style="flex:1">
+      <div id="matrix" class="grid" aria-label="button matrix"></div>
+      <div class="actions">
+        <button id="clear" class="btn">Clear</button>
+        <button id="randomize" class="btn">Randomize</button>
+        <button id="invert" class="btn">Invert</button>
+        <button id="shiftLeft" class="btn">Shift Left</button>
+        <button id="shiftRight" class="btn">Shift Right</button>
+        <button id="animate" class="btn">Animate</button>
+      </div>
+
+      <div class="panel" style="margin-top:12px">
+        <strong>Storyboard</strong>
+        <div class="actions">
+          <button id="saveFrame" class="btn">Save Frame</button>
+          <button id="copyFrame" class="btn">Copy Frame</button>
+          <button id="pasteFrame" class="btn">Paste Frame</button>
+          <button id="exportFrame" class="btn">Export Frame</button>
+          <button id="playStoryboard" class="btn">Play</button>
+          <button id="clearStoryboard" class="btn">Clear</button>
+        </div>
+        <div id="framesList" class="chips"></div>
+      </div>
+    </div>
+
+    <div style="flex:1">
+      <div class="panel">
+        <strong>Binary sequence (row-major)</strong>
+        <pre id="binary" class="mono" style="height:82px;white-space:pre-wrap"></pre>
+        <div style="margin-top:12px;display:flex;align-items:center;justify-content:space-between">
+          <strong>uint32_t elements</strong>
+          <div style="color:var(--muted);font-size:13px">Count: <span id="wordCount">0</span></div>
+        </div>
+        <div id="words" class="chips"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
